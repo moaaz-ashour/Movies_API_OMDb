@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <link type="text/css" rel="stylesheet" href="stylesheet.css">
+      <title>Movies API - Open Movie Database</title>
+   </head>
+
+   <body>
+      <div id='header'>
+         <h1>~ Movies ~</h1>
+         <div id="right">MOVIES</div>
+         <div id="left">INFO</div>
+         <div id='text_in_header'>
+            <h2>"Let me tell you something. There's no nobility in poverty. I've been a rich man, and I've been a poor man. And I choose rich every f*cking time". ~ The Wolf of Wall Street (2013)</h2>
+         </div>
+      </div>
+      <div id='container'>
+         <input id='textInput' placeholder= "Search for a Movie">
+         <button id="go" class="btn btn-5">GO</button>
+      </div>
+      <div>
+         <h1 id="resultsFor"></h1>
+      </div>
+      <div id="resultsBox"></div>
+      <audio id="quotesAudio" src="quotes/TheWolfofWallStreet.mp3"></audio>
+
+      <script id="moviesScript" type="text/handlebars">
+         {{#movies}}
+            <div id="resultsForMovie"> <h1></h1></div>
+            <img id="poster" src="{{poster}}">
+            <div id="details">
+               <div> <h1> {{title}} Movie Details: </h1> </div>
+               <div class='info'> Movie Title: {{title}}.</div>
+               <div class='info'> Actors: {{actors}}.</div>
+               <div class='info'> Writer: {{writer}}.</div>
+               <div class='info'> Awards won: {{awards}}</div>
+               <div class='info'> Released in: {{released}}.</div>
+            </div>
+         {{/movies}}
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="script.js"></script>
+   </body>
+</html>
